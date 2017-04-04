@@ -30,9 +30,11 @@ this will take all css and js and compress and uglify the files.
 Start the server
 ------------------
 
-Please run **http-server** 
+Please run **grunt serve** 
 
 please run this command in the code base home path
+
+application will be served in *http://localhost:8080/*
 
     
 
