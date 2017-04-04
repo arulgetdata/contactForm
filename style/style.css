@@ -1,0 +1,16 @@
+.form-wrapper{
+    padding: 15px;
+}
+.form-wrapper p{
+    margin-bottom: 25px;
+}
+.form-wrapper i{
+    color: red;
+}
+
+.form-control{
+    margin-bottom: 15px;
+}
+.slight-visibility{
+    color: #6b6969;
+}
