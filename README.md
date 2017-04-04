@@ -32,9 +32,7 @@ Start the server
 
 Please run **grunt serve** 
 
-please run this command in the code base home path
-
-application will be served in *http://localhost:8080/*
+Application will be served in *http://localhost:8080/*
 
     
 
