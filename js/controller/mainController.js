@@ -1,6 +1,12 @@
-angular.module('contactForm').controller('mainController',['$scope', function($scope){
+angular.module('contactForm').controller('mainController',['$scope','formActions' ,function($scope,formActions){
 
-$scope.name = "Arul";
+$scope.submitForm = function(){
+
+        formActions.submit($scope.query.name,$scope.query.email,$scope.query.msg).then(function(data){
+
+
+        })
+}
 
 }]);
 

@@ -14,3 +14,7 @@
 .slight-visibility{
     color: #6b6969;
 }
+input.ng-invalid.ng-touched,textarea.ng-invalid.ng-touched {
+    border:thin solid #FA787E;
+  }
+
