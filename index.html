@@ -12,19 +12,34 @@
 
 <body ng-controller="mainController">
 
-<div class="col-md-4 col-md-offset-4 col-sm-12 form-wrapper">
-    <h1>Contact Us</h1>
-    <p class="slight-visibility">Send us your queries using below form !</p>
-    <form ng-submit="submitForm()" novalidate name="contactForm">
-        <label>Name <i>*</i></label>
-        <input type="text" placeholder="Name" name="nameField" class="form-control" required ng-model="query.name">
-         <label>Email <i>*</i></label>
-         <input type="email" placeholder="Email" class="form-control" required ng-model="query.email">
-           <label>Message <i>*</i></label>
-         <textarea class="form-control" placeholder="Message"  required ng-model="query.msg"></textarea>
-         <input type="submit" value="send Query" class="btn btn-info pull-right" ng-disabled="contactForm.$invalid">
-    </form>
-</div>
+    <div class="col-md-4 col-md-offset-4 col-sm-12">
+        <div class="alert alert-success" role="alert" ng-if="formSubmitSuccess">Form Submmited Successfully !!</div>
+        <div class="alert alert-danger" role="alert" ng-if="formSubmitError">Form Submmited Successfully !!</div>
+        <div ng-hide="formSubmitSuccess" class="form-wrapper">
+            <h1>Contact Us</h1>
+            <p class="slight-visibility">Send us your queries using below form !</p>
+            <form ng-submit="submitForm()" novalidate name="contactForm">
+
+                
+                <label>Name <i>*</i></label>
+                <input type="text" placeholder="Name" name="nameField" class="form-control" required ng-model="query.name">
+                <div ng-messages="contactForm.nameField.$error" ng-if="contactForm.nameField.$touched && contactForm.nameField.$invalid">
+                    <p ng-message="required" class="formError">Your Name is required.</p>
+                </div>
+                <label>Email <i>*</i></label>
+                <input type="email" placeholder="Email" name="emailField" class="form-control" required ng-model="query.email">
+                  <div ng-messages="contactForm.emailFields.$error" ng-if="contactForm.emailField.$touched && contactForm.emailField.$invalid">
+                    <p ng-message="email" class="formError">Please enter valid email address</p>
+                </div>
+                <label>Message <i>*</i></label>
+                <textarea class="form-control" placeholder="Message" name="messageField" required ng-model="query.msg"></textarea>
+                <div ng-messages="contactForm.messageField.$error" ng-if="contactForm.messageField.$touched && contactForm.messageField.$invalid">
+                    <p ng-message="required" class="formError">Please add your message</p>
+                </div>
+                <input type="submit" value="Send Query" class="btn btn-info btn-style" ng-disabled="contactForm.$invalid">
+            </form>
+        </div>
+    </div>
     <script type="text/javascript" src="dist/contactModule.js"></script>
 </body>
 
