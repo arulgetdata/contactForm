@@ -37,6 +37,9 @@ input.ng-invalid.ng-touched,textarea.ng-invalid.ng-touched {
     width: 60%;
     margin-left: 20%;
 }
+.message-top-alignment{
+    margin-top: 10%;
+}
 
 
 @media screen and (max-width: 767px) {
